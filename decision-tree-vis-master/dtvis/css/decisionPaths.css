@@ -1,0 +1,39 @@
+.fixedTop {
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+
+#decision_path_tab table,
+.tooltip-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#decision_path_tab td,
+#decision_path_tab th,
+    {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+#decision_path_tab .table tr:nth-child(even)  {
+    background-color: #dddddd;
+}
+
+#decision_path_tab .table tr:nth-child(odd) .leaf-node-table-row {
+    background-color: white;
+}
+
+.table> tbody> tr>td {
+    vertical-align: middle;
+}
+
+.leaf-node-header {
+    text-align: center;
+}

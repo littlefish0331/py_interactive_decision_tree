@@ -1,0 +1,30 @@
+.bar {
+    fill: #91bbe4;
+    border:   medium none;
+  /*  stroke: black;
+    stroke-width: '0.25px';*/
+}
+
+.bar:hover {
+    fill: #0a4f75;
+}
+
+div.sorter_barChart {
+    width: 800px;
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.axis {
+  font: 14px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  stroke-width: 2px;
+}

@@ -1,0 +1,5 @@
+*.pdf
+notebook/.ipynb_checkpoints/
+*.json
+*.txt
+brfss2014.csv

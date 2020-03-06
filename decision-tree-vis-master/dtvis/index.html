@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%;">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/graph.css" rel="stylesheet">
+    <link href="css/zoom.css" rel="stylesheet">
+    <link href="css/button.css" rel="stylesheet">
+    <link href="css/tooltip.css" rel="stylesheet">
+    <link href="css/decisionPaths.css" rel="stylesheet">
+    <link href="css/bar.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src='js/d3.min.js'></script>
+    <script src='js/d3-tip.js'></script>
+    <script src="js/bar.js"></script>
+    <script src="js/decision-paths.js"></script>
+    <script src="js/sankey.js"></script>
+
+</head>
+
+<style>
+
+    body {
+        padding-top: 50px;
+    }
+
+
+</style>
+
+</head>
+
+<body style="background-color:white;">
+
+
+    <div class="tabbable">
+        <ul class="nav nav-tabs fixedTop">
+            <li class="active"><a href="#sankey_tab" data-toggle="tab">Decision Tree</a></li>
+            <li><a href="#barplot_tab" data-toggle="tab">Feature Importance</a></li>
+            <li><a href="#decision_path_tab" data-toggle="tab">Decision Path</a></li>
+
+        </ul>
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="sankey_tab">
+
+                <p>Click on the node to collapse and expand the tree and go to other tabs for more comparison</p>
+                <div id="decision_tree_container" style="width:1440px;height:750px">
+                    <div id="decision-tree" class="sankeytree" style="width:1440px;height:750px;">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="tab-pane" id="barplot_tab">
+                <div class="sorter_barChart">
+                    </br>
+                    <strong>Sort Feature Importance By</strong>
+                    </br>
+                    <button type="button" class="sort-button" autofocus="autofocus" id="button_alphabetic">Alphabetic</button>
+                    <button type="button" class="sort-button" id="button_ranking">Ranking</button>
+                </div>
+                <br>
+                <svg id="barplot_container" width="800" height="600"></svg>
+            </div>
+
+            <div class="tab-pane" id="decision_path_tab">
+                <div class="container" id="decision_path_container">
+
+
+                    <div class="form-group">
+                        <label for="sel1">Sort Decision Path By</label>
+                        <select class="form-control" id="table-sorter" width="100px"></select>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table" id="decision-path-table" width="100%">
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        data = [];
+        d3.json('data/d3tree_data.json', function(json) {
+            data = json;
+            // Draw Sankey
+            sankeyInit('#decision-tree', '1440px', '750px');
+            drawSankey('#decision-tree', data.x);
+            // Draw barplot
+            drawBarplot(keepImportant(data));
+            sortFeature(keepImportant(data));
+
+            //Decision paths
+            addDecisionPathSortOptions(data);
+            drawDecisionPathTable(data);
+
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

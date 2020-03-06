@@ -1,0 +1,16 @@
+.zoom-button {
+    fill: grey;
+    fill-opacity: 0.2;
+    cursor: pointer
+}
+
+.zoom-button-text {
+    fill: black;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.zoom-button-highlight {
+    fill-opacity: 0.8;
+    cursor: pointer
+}

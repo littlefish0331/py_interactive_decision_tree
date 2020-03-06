@@ -1,0 +1,27 @@
+.sort-button {
+  background-color: #d7e5f5;
+  border-top: 1px solid #abbbcc;
+  border-left: 1px solid #a7b6c7;
+  border-bottom: 1px solid #a1afbf;
+  border-right: 1px solid #a7b6c7;
+  border-radius: 12px;
+  -webkit-box-shadow: inset 0 1px 0 0 white;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #1a3e66;
+  font: normal 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 6px 6px 7px 6px;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff
+  width: 100%;
+ }
+
+ .nav-tabs > li > a{
+   border: medium none;
+   background-color:	#91bbe4;
+ }
+ .nav-tabs > li > a:hover{
+   background-color: #0a4f75;
+     border: medium none;
+     border-radius: 0;
+     color:white;
+ }
